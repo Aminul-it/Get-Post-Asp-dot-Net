@@ -1,0 +1,36 @@
+﻿@model CustomerDetailsVM
+
+<h1> Customer Details</h1>
+<h2> Coustomer Id @(Model.Id) </h2>
+<h2> Coustomer Name @(Model.Name)</h2>
+<h2>Customer PhoneNo @(Model.PhoneNo)</h2>
+<h2>Customer Address @(Model.Address)</h2>
+
+@if (Model.Products != null && Model.Products.Any())
+{
+    <h1>Customer Table:</h1>
+    int slNo = 0;
+    <table class="table table-striped table-bordered table-hover">
+
+        <thead>
+            <tr>
+                <th>SL</th>
+                <th>Name</th>
+                <th>Price</th>
+            </tr>
+
+        </thead>
+        <tbody>
+            @foreach (var product in Model.Products)
+            {
+                <tr>
+
+                    <td>@(++slNo)<td>
+                    <td>@product.Name</td>
+                    <td>@product.Price</td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+}
