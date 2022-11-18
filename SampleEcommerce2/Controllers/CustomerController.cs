@@ -9,11 +9,16 @@ namespace SampleEcommerce2.Controllers
         {
             return View();
         }
-
         public IActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+
+        public IActionResult Create(CreateVM model)
         { 
 
-            return View();
+            return View(model);
         }
         public IActionResult Details(CustomerDetailsVM customerDetailsVM)
         {

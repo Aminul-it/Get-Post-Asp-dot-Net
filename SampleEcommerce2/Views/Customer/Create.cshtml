@@ -1,6 +1,12 @@
-﻿
+﻿@model CreateVM
 
 
-<h1> Customer Create Page</h1>
-<p>Cstomer Id{@ViewBag.id} </p>
-<p>Customer Name{@ViewBag.name}</p>
+
+<form method="post">
+    <p>Name:<input type="text" asp-for="Name"/></p>
+    <span asp-validation-for="Name" class="text-danger"></span>
+    <p>Price : <input type="text" asp-for="Price"/></p>
+    <span asp-validation-for="Price"></span>
+    <p>Address; <input type="text"name="Address" /></p>
+    <input type="submit" value="Submit"/>
+</form>
